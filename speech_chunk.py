@@ -1,6 +1,8 @@
-from future.backports.datetime import timedelta
-import main
+from pathlib import PurePosixPath
+from compatible_audio_formats import CompatibleAudioFormats
 
+
+from future.backports.datetime import timedelta
 
 #   {
 #       clip_srt_index: 1, <- same order that will go into global array for each run of the processing can be used for the SRT files
@@ -22,13 +24,20 @@ import main
 # TODO - check if there are any sharp edges with Python classes.
 
 class SpeechChunk:
-    def __init__(self, clip_srt_index, project_title, chunk_from_audio_silence, milisecond_start, milisecond_end):
+    def __init__(
+            self,
+            project_title: str,
+            clip_srt_index: int,
+            speech_chunk_path: PurePosixPath,
+            milisecond_start: int,
+            milisecond_end: int,
+            audio_file_type: CompatibleAudioFormats,
+
+    ):
         self.project_title = project_title
-        self.chunk_from_audio_silence = chunk_from_audio_silence
+        self.speech_chunk_path = speech_chunk_path
         self.clip_srt_index = clip_srt_index
-        self.clip_name = None
-        self.path_to_clip = None
-        self.audio_file_type_SRT = None
+        self.audio_file_type = audio_file_type
         # milisecond start and end may not be required but also may be useful later.
         # these are the measurements given in the main chunks
         self.milisecondStart = milisecond_start

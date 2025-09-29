@@ -1,0 +1,11 @@
+class TranscriptionPlatform(Enum):
+    Google = 'Google'
+    WhisperAPI = 'Whisper API'
+    WhisperLocal = 'Whisper Local'
+    Wav2Vec2 = 'Wav2Vec2'
+    Vosk = 'Vosk'
+    NemoASR = 'NemoASR'
+    SpeechRecognition = 'SpeechRecognition'
+    CoquiSTT = 'CoquiSTT'
+    MozillaDeepSpeech = 'MozillaDeepSpeech'
+    SpeechD5 = 'SpeechD5'

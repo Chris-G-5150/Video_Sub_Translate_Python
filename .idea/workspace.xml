@@ -5,10 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21d6966-2252-44be-a325-404f7cdb32c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/compatible_audio_formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/compatible_video_formats.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extracted_audio.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/iso_3166_regions.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/transcription_platform.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/whisper_compatible_languages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/detect_audio_silence.py" beforeDir="false" afterPath="$PROJECT_DIR$/detect_audio_silence.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/iso_639_languages.py" beforeDir="false" afterPath="$PROJECT_DIR$/iso_639_languages.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/separate_audio_from_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_audio_from_video.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/speech_chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/speech_chunk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/speech_to_text_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/speech_to_text_generator.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/whisper_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/whisper_local.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -34,19 +43,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.detect_audio_silence.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.whisper_local.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.detect_audio_silence.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.whisper_local.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -68,5 +77,16 @@
       <updated>1758928301652</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
