@@ -32,23 +32,26 @@ class WhisperLocal:
         return bool(gpu and gpu[0].memoryTotal >= 1500)
 
     def run_speech_to_text(self):
+        # checks for nvidia Gpu,
+        # TODO - will have to add error boundary later down the line to suggest to user to use API.
         if self.gpu_is_compatible():
             model = whisper.load_model(self.chosen_model)
 
-            if hasattr(self, "user_set_language"):
-                for chunk in self.speech_chunks:
-                    audio = whisper.load_audio(chunk.path_to_clip)
-                    mel = whisper.log_mel_spectrogram(audio, n_mels=model.dims.n_mels).to(model.device)
-                    options = whisper.DecodingOptions(language=self.user_set_language)
-                    results = whisper.decode(model, mel, options)
-                    chunk.transcribed_audio = self.process_transcription_results(self, results, chunk)
+            for chunk in self.speech_chunks:
+                audio = whisper.load_audio(chunk.path_to_clip)
+                mel = whisper.log_mel_spectrogram(audio, n_mels=model.dims.n_mels).to(model.device)
 
-            else:
-                for chunk in self.speech_chunks:
-                    mel = whisper.log_mel_spectrogram(chunk.path_to_clip, n_mels=model.dims.n_mels).to(model.device)
+                if hasattr(self, "user_set_language"):
+                    options = whisper.DecodingOptions(language=self.user_set_language)
+
+                else:
                     _, probs = model.detect_language(mel)
                     options = whisper.DecodingOptions()
-                    results = whisper.decode(model, mel, options)
+
+                results = whisper.decode(model, mel, options)
+                chunk.transcribed_audio = self.process_transcription_results(self, results, chunk)
+
+
 
     @staticmethod
     def process_transcription_results(self, results_list, chunk):
@@ -64,7 +67,6 @@ class WhisperLocal:
             chunk_transcribed.append(results_list.text)
 
         return str(chunk_transcribed)
-
 
  # whisper_local = WhisperLocal()
 
