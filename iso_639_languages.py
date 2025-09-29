@@ -1,5 +1,4 @@
-# looked up the common standard that ****some**** APIs take.
-# TODO - investigate further if there are some that take triple character country codes.
+
 iso_639_languages = [
     { "code" : 'ab', "name" : 'Abkhazian' },
     { "code" : 'aa', "name" : 'Afar' },

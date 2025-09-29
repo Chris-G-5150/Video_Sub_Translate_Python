@@ -1,4 +1,4 @@
-from pydub import AudioSegment, silence, playback
+from pydub import AudioSegment, silence
 import os
 import shutil
 from pathlib import Path
@@ -52,12 +52,18 @@ def split_audio_remove_silence(path_to_file: str, path_to_output: str, user_sile
     )
 
     speech_chunks_silence_removed = []
+    # Very doubtful actual speech sections will be less than two seconds, cuts out loud breathing/background sections
+    for chunk in speech_chunks:
+        if not chunk.duration_seconds < 2:
+            speech_chunks_silence_removed.append(chunk)
+    #   Filters speech chunks out less than 2 seconds long out before writing to disk, makes sure that the indexes are in
+    #   the correct order for the sub files instead of having 1: some dialogue 2: **nothing** 3: some dialogue.
+    #   This keeps sub files concise and no longer than they need to be.
 
-    for index, chunk in enumerate(speech_chunks):
-        if not chunk.duration_seconds < 2: # potentially filter these out beforehand? Will keep the files in order and consistent.
-            #  ^ very doubtful actual speech sections will be less than two seconds, cuts out loud breathing/background
+    for index, chunk in enumerate(speech_chunks_silence_removed):
             print(f"Exporting chunk {index} ({len(chunk) / 1000:.2f}s)")
-            chunk.export(os.path.join(path_to_output, f"{index}.mp3"), format="mp3") # <- mp3 keeps things small not much of a loss for speech
+            chunk.export(os.path.join(path_to_output, f"{index}.mp3"), format="mp3")
+            # ^ mp3 keeps things small and quicker to pass to API not much of a loss for speech
 
 
 
