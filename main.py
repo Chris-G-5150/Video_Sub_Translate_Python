@@ -1,6 +1,19 @@
-
+from enum import Enum
 audio_formats = ['wav', 'ogg', 'mp3']
 video_formats = ['mp4', 'mkv', 'webm', 'flv', 'avi', 'mov', 'wmv', 'm4v']
+
+class TranscriptionPlatform(Enum):
+    Google = 'Google'
+    WhisperAPI = 'Whisper API'
+    WhisperLocal = 'Whisper Local'
+    Wav2Vec2 = 'Wav2Vec2'
+    Vosk = 'Vosk'
+    NemoASR = 'NemoASR'
+    SpeechRecognition = 'SpeechRecognition'
+    CoquiSTT = 'CoquiSTT'
+    MozillaDeepSpeech = 'MozillaDeepSpeech'
+    SpeechD5 = 'SpeechD5'
+
 path_to_extracted_audio = ''
 audio_file_extension = ''
 audio_slices = []

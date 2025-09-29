@@ -43,6 +43,8 @@ class WhisperLocal:
 
                 if hasattr(self, "user_set_language"):
                     options = whisper.DecodingOptions(language=self.user_set_language)
+                    chunk.user_set_language = self.user_set_language
+                    chunk.platform_translated_from
 
                 else:
                     _, probs = model.detect_language(mel)

@@ -1,187 +1,187 @@
+from enum import Enum
 
-iso_639_languages = [
-    { "code" : 'ab', "name" : 'Abkhazian' },
-    { "code" : 'aa', "name" : 'Afar' },
-    { "code" : 'af', "name" : 'Afrikaans' },
-    { "code" : 'ak', "name" : 'Akan' },
-    { "code" : 'sq', "name" : 'Albanian' },
-    { "code" : 'am', "name" : 'Amharic' },
-    { "code" : 'ar', "name" : 'Arabic' },
-    { "code" : 'an', "name" : 'Aragonese' },
-    { "code" : 'hy', "name" : 'Armenian' },
-    { "code" : 'as', "name" : 'Assamese' },
-    { "code" : 'av', "name" : 'Avaric' },
-    { "code" : 'ae', "name" : 'Avestan' },
-    { "code" : 'ay', "name" : 'Aymara' },
-    { "code" : 'az', "name" : 'Azerbaijani' },
-    { "code" : 'bm', "name" : 'Bambara' },
-    { "code" : 'ba', "name" : 'Bashkir' },
-    { "code" : 'eu', "name" : 'Basque' },
-    { "code" : 'be', "name" : 'Belarusian' },
-    { "code" : 'bn', "name" : 'Bengali' },
-    { "code" : 'bh', "name" : 'Bihari languages' },
-    { "code" : 'bi', "name" : 'Bislama' },
-    { "code" : 'bs', "name" : 'Bosnian' },
-    { "code" : 'br', "name" : 'Breton' },
-    { "code" : 'bg', "name" : 'Bulgarian' },
-    { "code" : 'my', "name" : 'Burmese' },
-    { "code" : 'ca', "name" : 'Catalan, Valencian' },
-    { "code" : 'km', "name" : 'Central Khmer' },
-    { "code" : 'ch', "name" : 'Chamorro' },
-    { "code" : 'ce', "name" : 'Chechen' },
-    { "code" : 'ny', "name" : 'Chichewa, Chewa, Nyanja' },
-    { "code" : 'zh', "name" : 'Chinese' },
-    { "code" : 'cu', "name" : 'Church Slavonic, Old Bulgarian, Old Church Slavonic' },
-    { "code" : 'cv', "name" : 'Chuvash' },
-    { "code" : 'kw', "name" : 'Cornish' },
-    { "code" : 'co', "name" : 'Corsican' },
-    { "code" : 'cr', "name" : 'Cree' },
-    { "code" : 'hr', "name" : 'Croatian' },
-    { "code" : 'cs', "name" : 'Czech' },
-    { "code" : 'da', "name" : 'Danish' },
-    { "code" : 'dv', "name" : 'Divehi, Dhivehi, Maldivian' },
-    { "code" : 'nl', "name" : 'Dutch, Flemish' },
-    { "code" : 'dz', "name" : 'Dzongkha' },
-    { "code" : 'en', "name" : 'English' },
-    { "code" : 'eo', "name" : 'Esperanto' },
-    { "code" : 'et', "name" : 'Estonian' },
-    { "code" : 'ee', "name" : 'Ewe' },
-    { "code" : 'fo', "name" : 'Faroese' },
-    { "code" : 'fj', "name" : 'Fijian' },
-    { "code" : 'fi', "name" : 'Finnish' },
-    { "code" : 'fr', "name" : 'French' },
-    { "code" : 'ff', "name" : 'Fulah' },
-    { "code" : 'gd', "name" : 'Gaelic, Scottish Gaelic' },
-    { "code" : 'gl', "name" : 'Galician' },
-    { "code" : 'lg', "name" : 'Ganda' },
-    { "code" : 'ka', "name" : 'Georgian' },
-    { "code" : 'de', "name" : 'German' },
-    { "code" : 'ki', "name" : 'Gikuyu, Kikuyu' },
-    { "code" : 'el', "name" : 'Greek (Modern)' },
-    { "code" : 'kl', "name" : 'Greenlandic, Kalaallisut' },
-    { "code" : 'gn', "name" : 'Guarani' },
-    { "code" : 'gu', "name" : 'Gujarati' },
-    { "code" : 'ht', "name" : 'Haitian, Haitian Creole' },
-    { "code" : 'ha', "name" : 'Hausa' },
-    { "code" : 'he', "name" : 'Hebrew' },
-    { "code" : 'hz', "name" : 'Herero' },
-    { "code" : 'hi', "name" : 'Hindi' },
-    { "code" : 'ho', "name" : 'Hiri Motu' },
-    { "code" : 'hu', "name" : 'Hungarian' },
-    { "code" : 'is', "name" : 'Icelandic' },
-    { "code" : 'io', "name" : 'Ido' },
-    { "code" : 'ig', "name" : 'Igbo' },
-    { "code" : 'id', "name" : 'Indonesian' },
-    { "code" : 'ia', "name" : 'Interlingua (International Auxiliary Language Association)' },
-    { "code" : 'ie', "name" : 'Interlingue' },
-    { "code" : 'iu', "name" : 'Inuktitut' },
-    { "code" : 'ik', "name" : 'Inupiaq' },
-    { "code" : 'ga', "name" : 'Irish' },
-    { "code" : 'it', "name" : 'Italian' },
-    { "code" : 'ja', "name" : 'Japanese' },
-    { "code" : 'jv', "name" : 'Javanese' },
-    { "code" : 'kn', "name" : 'Kannada' },
-    { "code" : 'kr', "name" : 'Kanuri' },
-    { "code" : 'ks', "name" : 'Kashmiri' },
-    { "code" : 'kk', "name" : 'Kazakh' },
-    { "code" : 'rw', "name" : 'Kinyarwanda' },
-    { "code" : 'kv', "name" : 'Komi' },
-    { "code" : 'kg', "name" : 'Kongo' },
-    { "code" : 'ko', "name" : 'Korean' },
-    { "code" : 'kj', "name" : 'Kwanyama, Kuanyama' },
-    { "code" : 'ku', "name" : 'Kurdish' },
-    { "code" : 'ky', "name" : 'Kyrgyz' },
-    { "code" : 'lo', "name" : 'Lao' },
-    { "code" : 'la', "name" : 'Latin' },
-    { "code" : 'lv', "name" : 'Latvian' },
-    { "code" : 'lb', "name" : 'Letzeburgesch, Luxembourgish' },
-    { "code" : 'li', "name" : 'Limburgish, Limburgan, Limburger' },
-    { "code" : 'ln', "name" : 'Lingala' },
-    { "code" : 'lt', "name" : 'Lithuanian' },
-    { "code" : 'lu', "name" : 'Luba-Katanga' },
-    { "code" : 'mk', "name" : 'Macedonian' },
-    { "code" : 'mg', "name" : 'Malagasy' },
-    { "code" : 'ms', "name" : 'Malay' },
-    { "code" : 'ml', "name" : 'Malayalam' },
-    { "code" : 'mt', "name" : 'Maltese' },
-    { "code" : 'gv', "name" : 'Manx' },
-    { "code" : 'mi', "name" : 'Maori' },
-    { "code" : 'mr', "name" : 'Marathi' },
-    { "code" : 'mh', "name" : 'Marshallese' },
-    { "code" : 'ro', "name" : 'Moldovan, Moldavian, Romanian' },
-    { "code" : 'mn', "name" : 'Mongolian' },
-    { "code" : 'na', "name" : 'Nauru' },
-    { "code" : 'nv', "name" : 'Navajo, Navaho' },
-    { "code" : 'nd', "name" : 'Northern Ndebele' },
-    { "code" : 'ng', "name" : 'Ndonga' },
-    { "code" : 'ne', "name" : 'Nepali' },
-    { "code" : 'se', "name" : 'Northern Sami' },
-    { "code" : 'no', "name" : 'Norwegian' },
-    { "code" : 'nb', "name" : 'Norwegian Bokmål' },
-    { "code" : 'nn', "name" : 'Norwegian Nynorsk' },
-    { "code" : 'ii', "name" : 'Nuosu, Sichuan Yi' },
-    { "code" : 'oc', "name" : 'Occitan (post 1500)' },
-    { "code" : 'oj', "name" : 'Ojibwa' },
-    { "code" : 'or', "name" : 'Oriya' },
-    { "code" : 'om', "name" : 'Oromo' },
-    { "code" : 'os', "name" : 'Ossetian, Ossetic' },
-    { "code" : 'pi', "name" : 'Pali' },
-    { "code" : 'pa', "name" : 'Panjabi, Punjabi' },
-    { "code" : 'ps', "name" : 'Pashto, Pushto' },
-    { "code" : 'fa', "name" : 'Persian' },
-    { "code" : 'pl', "name" : 'Polish' },
-    { "code" : 'pt', "name" : 'Portuguese' },
-    { "code" : 'qu', "name" : 'Quechua' },
-    { "code" : 'rm', "name" : 'Romansh' },
-    { "code" : 'rn', "name" : 'Rundi' },
-    { "code" : 'ru', "name" : 'Russian' },
-    { "code" : 'sm', "name" : 'Samoan' },
-    { "code" : 'sg', "name" : 'Sango' },
-    { "code" : 'sa', "name" : 'Sanskrit' },
-    { "code" : 'sc', "name" : 'Sardinian' },
-    { "code" : 'sr', "name" : 'Serbian' },
-    { "code" : 'sn', "name" : 'Shona' },
-    { "code" : 'sd', "name" : 'Sindhi' },
-    { "code" : 'si', "name" : 'Sinhala, Sinhalese' },
-    { "code" : 'sk', "name" : 'Slovak' },
-    { "code" : 'sl', "name" : 'Slovenian' },
-    { "code" : 'so', "name" : 'Somali' },
-    { "code" : 'st', "name" : 'Sotho, Southern' },
-    { "code" : 'nr', "name" : 'South Ndebele' },
-    { "code" : 'es', "name" : 'Spanish, Castilian' },
-    { "code" : 'su', "name" : 'Sundanese' },
-    { "code" : 'sw', "name" : 'Swahili' },
-    { "code" : 'ss', "name" : 'Swati' },
-    { "code" : 'sv', "name" : 'Swedish' },
-    { "code" : 'tl', "name" : 'Tagalog' },
-    { "code" : 'ty', "name" : 'Tahitian' },
-    { "code" : 'tg', "name" : 'Tajik' },
-    { "code" : 'ta', "name" : 'Tamil' },
-    { "code" : 'tt', "name" : 'Tatar' },
-    { "code" : 'te', "name" : 'Telugu' },
-    { "code" : 'th', "name" : 'Thai' },
-    { "code" : 'bo', "name" : 'Tibetan' },
-    { "code" : 'ti', "name" : 'Tigrinya' },
-    { "code" : 'to', "name" : 'Tonga (Tonga Islands)' },
-    { "code" : 'ts', "name" : 'Tsonga' },
-    { "code" : 'tn', "name" : 'Tswana' },
-    { "code" : 'tr', "name" : 'Turkish' },
-    { "code" : 'tk', "name" : 'Turkmen' },
-    { "code" : 'tw', "name" : 'Twi' },
-    { "code" : 'ug', "name" : 'Uighur, Uyghur' },
-    { "code" : 'uk', "name" : 'Ukrainian' },
-    { "code" : 'ur', "name" : 'Urdu' },
-    { "code" : 'uz', "name" : 'Uzbek' },
-    { "code" : 've', "name" : 'Venda' },
-    { "code" : 'vi', "name" : 'Viet"name"se' },
-    { "code" : 'vo', "name" : 'Volap_k' },
-    { "code" : 'wa', "name" : 'Walloon' },
-    { "code" : 'cy', "name" : 'Welsh' },
-    { "code" : 'fy', "name" : 'Western Frisian' },
-    { "code" : 'wo', "name" : 'Wolof' },
-    { "code" : 'xh', "name" : 'Xhosa' },
-    { "code" : 'yi', "name" : 'Yiddish' },
-    { "code" : 'yo', "name" : 'Yoruba' },
-    { "code" : 'za', "name" : 'Zhuang, Chuang' },
-    { "code" : 'zu', "name" : 'Zulu' },
-]
+class ISO639Language(Enum):
+    Afar = 'aa'
+    Abkhaz = 'ab'
+    Avestan = 'ae'
+    Afrikaans = 'af'
+    Akan = 'ak'
+    Amharic = 'am'
+    Aragonese = 'an'
+    Arabic = 'ar'
+    Assamese = 'as'
+    Avaric = 'av'
+    Aymara = 'ay'
+    Azerbaijani = 'az'
+    Bashkir = 'ba'
+    Belarusian = 'be'
+    Bulgarian = 'bg'
+    Bihari = 'bh'
+    Bislama = 'bi'
+    Bambara = 'bm'
+    Bengali = 'bn'
+    Tibetan_Standard = 'bo'
+    Breton = 'br'
+    Bosnian = 'bs'
+    Catalan = 'ca'
+    Chechen = 'ce'
+    Chamorro = 'ch'
+    Corsican = 'co'
+    Cree = 'cr'
+    Czech = 'cs'
+    Old_Church_Slavonic = 'cu'
+    Chuvash = 'cv'
+    Welsh = 'cy'
+    Danish = 'da'
+    German = 'de'
+    Divehi = 'dv'
+    Dzongkha = 'dz'
+    Ewe = 'ee'
+    Greek = 'el'
+    English = 'en'
+    Esperanto = 'eo'
+    Spanish = 'es'
+    Estonian = 'et'
+    Basque = 'eu'
+    Persian = 'fa'
+    Fula = 'ff'
+    Finnish = 'fi'
+    Fijian = 'fj'
+    Faroese = 'fo'
+    French = 'fr'
+    Western_Frisian = 'fy'
+    Irish = 'ga'
+    Scottish_Gaelic = 'gd'
+    Galician = 'gl'
+    Guarani = 'gn'
+    Gujarati = 'gu'
+    Manx = 'gv'
+    Hausa = 'ha'
+    Hebrew = 'he'
+    Hindi = 'hi'
+    Hiri_Motu = 'ho'
+    Croatian = 'hr'
+    Haitian = 'ht'
+    Hungarian = 'hu'
+    Armenian = 'hy'
+    Herero = 'hz'
+    Interlingua = 'ia'
+    Indonesian = 'id'
+    Interlingue = 'ie'
+    Igbo = 'ig'
+    Nuosu = 'ii'
+    Inupiaq = 'ik'
+    Ido = 'io'
+    Icelandic = 'is'
+    Italian = 'it'
+    Inuktitut = 'iu'
+    Japanese = 'ja'
+    Javanese = 'jv'
+    Georgian = 'ka'
+    Kongo = 'kg'
+    Kikuyu = 'ki'
+    Kwanyama = 'kj'
+    Kazakh = 'kk'
+    Kalaallisut = 'kl'
+    Khmer = 'km'
+    Kannada = 'kn'
+    Korean = 'ko'
+    Kanuri = 'kr'
+    Kashmiri = 'ks'
+    Kurdish = 'ku'
+    Komi = 'kv'
+    Cornish = 'kw'
+    Kyrgyz = 'ky'
+    Latin = 'la'
+    Luxembourgish = 'lb'
+    Ganda = 'lg'
+    Limburgish = 'li'
+    Lingala = 'ln'
+    Lao = 'lo'
+    Lithuanian = 'lt'
+    Luba_Katanga = 'lu'
+    Latvian = 'lv'
+    Malagasy = 'mg'
+    Marshallese = 'mh'
+    Maori = 'mi'
+    Macedonian = 'mk'
+    Malayalam = 'ml'
+    Mongolian = 'mn'
+    Marathi = 'mr'
+    Malay = 'ms'
+    Maltese = 'mt'
+    Burmese = 'my'
+    Nauru = 'na'
+    Norwegian_Bokmal = 'nb'
+    Northern_Ndebele = 'nd'
+    Nepali = 'ne'
+    Ndonga = 'ng'
+    Dutch = 'nl'
+    Norwegian_Nynorsk = 'nn'
+    Norwegian = 'no'
+    Southern_Ndebele = 'nr'
+    Navajo = 'nv'
+    Chichewa = 'ny'
+    Occitan = 'oc'
+    Ojibwe = 'oj'
+    Oromo = 'om'
+    Oriya = 'or'
+    Ossetian = 'os'
+    Panjabi = 'pa'
+    Pali = 'pi'
+    Polish = 'pl'
+    Pashto = 'ps'
+    Portuguese = 'pt'
+    Quechua = 'qu'
+    Romansh = 'rm'
+    Kirundi = 'rn'
+    Romanian = 'ro'
+    Russian = 'ru'
+    Kinyarwanda = 'rw'
+    Sanskrit = 'sa'
+    Sardinian = 'sc'
+    Sindhi = 'sd'
+    Northern_Sami = 'se'
+    Sango = 'sg'
+    Sinhala = 'si'
+    Slovak = 'sk'
+    Slovene = 'sl'
+    Samoan = 'sm'
+    Shona = 'sn'
+    Somali = 'so'
+    Albanian = 'sq'
+    Serbian = 'sr'
+    Swati = 'ss'
+    Southern_Sotho = 'st'
+    Sundanese = 'su'
+    Swedish = 'sv'
+    Swahili = 'sw'
+    Tamil = 'ta'
+    Telugu = 'te'
+    Tajik = 'tg'
+    Thai = 'th'
+    Tigrinya = 'ti'
+    Turkmen = 'tk'
+    Tagalog = 'tl'
+    Tswana = 'tn'
+    Tonga = 'to'
+    Turkish = 'tr'
+    Tsonga = 'ts'
+    Tatar = 'tt'
+    Twi = 'tw'
+    Tahitian = 'ty'
+    Uyghur = 'ug'
+    Ukrainian = 'uk'
+    Urdu = 'ur'
+    Uzbek = 'uz'
+    Venda = 've'
+    Vietnamese = 'vi'
+    Volapuk = 'vo'
+    Walloon = 'wa'
+    Wolof = 'wo'
+    Xhosa = 'xh'
+    Yiddish = 'yi'
+    Yoruba = 'yo'
+    Zhuang = 'za'
+    Chinese = 'zh'
+    Zulu = 'zu'
