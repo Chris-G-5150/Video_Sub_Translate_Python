@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="d21d6966-2252-44be-a325-404f7cdb32c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/detect_audio_silence.py" beforeDir="false" afterPath="$PROJECT_DIR$/detect_audio_silence.py" afterDir="false" />
-    </list>
+    <list default="true" id="d21d6966-2252-44be-a325-404f7cdb32c1" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
