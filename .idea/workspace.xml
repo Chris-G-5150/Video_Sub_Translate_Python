@@ -5,20 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21d6966-2252-44be-a325-404f7cdb32c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/compatible_audio_formats.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compatible_video_formats.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extracted_audio.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/iso_3166_regions.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/transcription_platform.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/whisper_compatible_languages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/detect_audio_silence.py" beforeDir="false" afterPath="$PROJECT_DIR$/detect_audio_silence.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iso_639_languages.py" beforeDir="false" afterPath="$PROJECT_DIR$/iso_639_languages.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/separate_audio_from_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/separate_audio_from_video.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/speech_chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/speech_chunk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/speech_to_text_generator.py" beforeDir="false" afterPath="$PROJECT_DIR$/speech_to_text_generator.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whisper_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/whisper_local.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

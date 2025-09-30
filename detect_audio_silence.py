@@ -83,7 +83,6 @@ class DetectAudioSilence:
                     chunk.duration_seconds,
                     chunk.duration_seconds,
                     audio_file_type
-
                 )
 
                 self.extracted_audio.add_speech_chunk(new_speech_chunk)
