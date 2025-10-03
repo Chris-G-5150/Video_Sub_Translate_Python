@@ -26,8 +26,7 @@ It’s designed to handle real-world media efficiently — cutting silence first
 
 ---
 ## 🚀 Architecture Overview
-
-```mermaid
+```
 flowchart TD
     A[Video/Audio Input]
     B[Silence Removal (PyDub)]
