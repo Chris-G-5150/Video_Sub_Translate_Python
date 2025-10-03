@@ -25,9 +25,6 @@ It’s designed to handle real-world media efficiently — cutting silence first
 - [GPUtil](https://github.com/anderskm/gputil) — GPU checks  
 
 ---
-
-## 🚀 Architecture Overview
-
 ## 🚀 Architecture Overview
 
 ```mermaid
@@ -50,7 +47,6 @@ flowchart TD
     E --> H
     H --> G
 ```
-
 ---
 
 ## 🚀 Usage
