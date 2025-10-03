@@ -28,16 +28,28 @@ It’s designed to handle real-world media efficiently — cutting silence first
 
 ## 🚀 Architecture Overview
 
+## 🚀 Architecture Overview
+
 ```mermaid
 flowchart TD
-    A[Video/Audio Input] --> B[Silence Removal (PyDub)]
-    B --> C[SpeechChunks Created]
-    C --> D[Transcription (Faster-Whisper)]
-    D --> E[Per-Chunk .txt Files]
-    D --> F[Merge with Offsets]
-    F --> G[SRT Subtitle Output]
-    E --> H[Optional Translation Pipeline]
+    A[Video/Audio Input]
+    B[Silence Removal (PyDub)]
+    C[SpeechChunks Created]
+    D[Transcription (Faster-Whisper)]
+    E[Per-Chunk .txt Files]
+    F[Merge with Offsets]
+    G[SRT Subtitle Output]
+    H[Optional Translation Pipeline]
+
+    A --> B
+    B --> C
+    C --> D
+    D --> E
+    D --> F
+    F --> G
+    E --> H
     H --> G
+
 ```
 
 ---
@@ -94,13 +106,7 @@ This makes it easy to:
 
 ---
 
-## 👨‍💻 About
-This project was built as a way to:
-- Explore large-scale speech processing  
-- Get hands-on with CUDA & Whisper internals  
-- Demonstrate resilience in debugging complex data pipelines
-
----
+## 🚧 Current Status & Next Steps  
 
 ### 🔜 Features to Implement
 - **Text File Export:** Write transcriptions to disk in a translation-ready format.  
@@ -126,4 +132,3 @@ This project was built as part of a portfolio to demonstrate:
 - End-to-end system design, from data preprocessing to AI inference to output formatting.  
 
 > It reflects a commitment to building practical, production-ready AI solutions under real-world constraints.  
-
