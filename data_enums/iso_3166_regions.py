@@ -1,6 +1,6 @@
 from enum import Enum
 
-class ISO3166Regions(Enum):
+class ISO3166Regions(str, Enum):
     Afghanistan = 'AF'
     AlandIslands = 'AX'
     Albania = 'AL'
@@ -250,3 +250,10 @@ class ISO3166Regions(Enum):
     Yemen = 'YE'
     Zambia = 'ZM'
     Zimbabwe = 'ZW'
+
+    @classmethod
+    def has_value(cls, value: str) -> bool:
+        return value in cls._value2member_map_
+
+    def __str__(self) -> str:
+        return self.value
