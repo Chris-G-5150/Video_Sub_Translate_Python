@@ -1,4 +1,6 @@
 from pathlib import Path
+
+from data_classes.state_steps import StateSteps
 from data_enums.whisper_local_models import WhisperEnglishModels
 from helper_functions.enum_evaluator import evaluate_enum
 from module_parameters.app_params import AppParams
@@ -33,8 +35,16 @@ class App:
         file_manager = self.file_manager
         file_manager.app_base_dir = self.get_base_dir()
         file_manager.set_directory_paths_in_file_manager()
+        #   checks if the project has already been ran and the folders exist, if so looks at jsonified speech chunks,
+        #   this is to mitigate on if the program failed at any point and stops needless repetition of files already being processed
+        for directory in file_manager.directories:
+
+
+
         file_manager.build_directories_in_file_system()
         self.run_audio_extraction()
+
+
 
     @staticmethod
     def get_base_dir() -> Path:
@@ -42,7 +52,7 @@ class App:
 
     def run_audio_extraction(self):
         app = self
-        params = SeparateAudioFromVideoParams(media_manager=app.media_manager, file_manager=app.file_manager)
+        params = SeparateAudioFromVideoParams(media_manager=app.media_manager, file_manager=app.file_manager, state_step=StateSteps.)
         app.separate_audio_from_video = SeparateAudioFromVideo(params)
         status = self.separate_audio_from_video.process_video_to_audio()
 
@@ -100,14 +110,7 @@ test_media_params = MediaManagerParams(
 )
 
 App(test_app_params, test_media_params).start()
-#
-#
-#
-#
-#
-#
-#
-#
+
 
 
 

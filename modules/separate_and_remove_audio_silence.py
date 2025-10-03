@@ -20,6 +20,7 @@ class SeparateAndRemoveAudioSilience:
         self.user_silence_duration = params.media_manager.user_silence_duration
         self.source_language = evaluate_enum(params.media_manager.source_language, ISO639Language)
         self.source_language_dialect = evaluate_enum(params.media_manager.source_language_dialect, ISO3166Regions)
+        self.process_step = "2"
 
     def split_audio_remove_silence(self):
         file_manager = self.file_manager

@@ -14,6 +14,7 @@ class SeparateAudioFromVideo:
     def __init__(self, params: SeparateAudioFromVideoParams):
         self.media_manager = params.media_manager
         self.file_manager = params.file_manager
+        self.process_step = "1"
 
     def process_video_to_audio(self) -> str:
         media_manager = self.media_manager

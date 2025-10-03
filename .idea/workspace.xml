@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21d6966-2252-44be-a325-404f7cdb32c1" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_classes/state_steps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/modules/speech_chunk_to_json.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/separate_and_remove_audio_silence.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/separate_and_remove_audio_silence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/separate_audio_from_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/separate_audio_from_video.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
