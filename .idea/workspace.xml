@@ -5,11 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21d6966-2252-44be-a325-404f7cdb32c1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/event_handler/events/data_initializer_events.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_handler/events/file_manager_events.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_handler/events/global_state_events.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/event_handler/events/media_manager_events.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/iso_639_languages.py" beforeDir="false" afterPath="$PROJECT_DIR$/iso_639_languages.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console_animations/animation_sequences/boot_sequence_animations.py" beforeDir="false" afterPath="$PROJECT_DIR$/console_animations/animation_sequences/boot_sequence_animations.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handler/event_dispatchers.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_handler/event_dispatchers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handler/events_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_handler/events_types.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/speech_chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/speech_chunk.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/whisper_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/whisper_local.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/global_state_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/global_state_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +32,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -34,23 +43,58 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.detect_audio_silence.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.whisper_local.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.detect_audio_silence.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.media_manager.executor&quot;: &quot;Run&quot;,
+    &quot;Python.separate_audio_from_video.executor&quot;: &quot;Run&quot;,
+    &quot;Python.whisper_local.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/event_handler/events/USE_THIS_IF_EVENTS_GETS_TOO_BIG" />
+      <recent name="$PROJECT_DIR$/event_handler/events/modules/USE_THIS_IF_MODULES_GETS_TOO_BIG" />
+      <recent name="$PROJECT_DIR$/event_handler/events" />
+      <recent name="$PROJECT_DIR$/console_animations" />
+      <recent name="$PROJECT_DIR$/modules" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="AudioTranslate" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -68,5 +112,16 @@
       <updated>1758928301652</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

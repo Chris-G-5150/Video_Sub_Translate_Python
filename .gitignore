@@ -1,2 +1,8 @@
 /corry.mp3
 /exported_segments/
+/test/
+/.venv/
+/coronationstreet.mp4
+/debug_tools/
+/dev_environment.py
+/cleanup_pycache.sh
