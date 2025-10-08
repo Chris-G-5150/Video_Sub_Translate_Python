@@ -1,0 +1,16 @@
+
+
+
+# class EventDispatchers:
+#     app_dispatcher = EventHandler()
+#     global_state_dispatcher = EventHandler()
+#     file_manager_dispatcher = EventHandler()
+#     google_translate_dispatcher = EventHandler()
+#     data_initializer_dispatcher = EventHandler()
+#     class_intializer_dispatcher = EventHandler()
+#     media_dispatcher = EventHandler()
+#     speech_dispatcher = EventHandler()
+#     separate_and_remove_audio_dispatcher = EventHandler()
+#     separate_audio_from_video_dispatcher = EventHandler()
+#     speech_chunk_to_json_dispatcher = EventHandler()
+#     whisper_local_dispacher = EventHandler()
