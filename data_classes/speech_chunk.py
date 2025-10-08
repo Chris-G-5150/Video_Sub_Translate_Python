@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+
 from data_enums.compatible_audio_formats import CompatibleAudioFormats
 from data_enums.iso_639_languages import ISO639Language
 

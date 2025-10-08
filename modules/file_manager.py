@@ -3,12 +3,12 @@ from dataclasses import asdict
 from pathlib import Path
 from typing import List
 
+from event_handlers_and_data.event_dispatchers import EventDispatchers
 from pydub import AudioSegment
 
 from data_classes.global_config import GlobalConfig
 from data_classes.speech_chunk import SpeechChunk
 from data_classes.state_steps import StateStep
-from event_handlers_and_data.event_dispatchers import EventDispatchers
 from modules.utils import Utils
 
 
@@ -73,22 +73,16 @@ class FileManager:
             file.flush()
             os.fsync(file.fileno())
 
-    def write_state_json_to_disk(
-        self, state_step: StateStep, speech_chunks: List[SpeechChunk]
-    ):
+    def write_state_json_to_disk(self, state_step: StateStep, speech_chunks: List[SpeechChunk]):
         file_manager = self
-        speech_chunk_json_file_name = (
-            file_manager.utils.get_speech_chunk_json_file_name(state_step)
-        )
+        speech_chunk_json_file_name = file_manager.utils.get_speech_chunk_json_file_name(state_step)
 
         speech_chunk_file_path = file_manager.build_file_os_path(
             file_manager.directories.speech_chunk_json_dir, speech_chunk_json_file_name
         ).with_suffix(".json")
 
         state_step.state_step_file_path = speech_chunk_file_path
-        state_step_jsonified = self.utils.convert_state_step_to_json(
-            state_step=state_step
-        )
+        state_step_jsonified = self.utils.convert_state_step_to_json(state_step=state_step)
 
         temp_path = file_manager.build_file_os_path(
             file_manager.directories.speech_chunk_json_dir, "temp"

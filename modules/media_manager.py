@@ -1,10 +1,10 @@
 from data_classes.global_config import GlobalConfig
+from data_classes.speech_chunk import SpeechChunk
 from data_enums.compatible_audio_formats import CompatibleAudioFormats
 from data_enums.compatible_video_formats import CompatibleVideoFormats
-from data_enums.iso_3166_regions import ISO3166Regions
 from data_enums.iso_639_languages import ISO639Language
+from data_enums.iso_3166_regions import ISO3166Regions
 from helper_functions.data.enum_evaluator import evaluate_enum
-from data_classes.speech_chunk import SpeechChunk
 
 
 class MediaManager:

@@ -1,15 +1,17 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import Optional
+
 from data_classes.state_steps import StateSteps
 from data_enums.compatible_audio_formats import CompatibleAudioFormats
 from data_enums.compatible_video_formats import CompatibleVideoFormats
-from data_enums.iso_3166_regions import ISO3166Regions
 from data_enums.iso_639_languages import ISO639Language
+from data_enums.iso_3166_regions import ISO3166Regions
 from data_enums.whisper_local_models import (
-    WhisperMultiLingualModels,
     WhisperEnglishModels,
+    WhisperMultiLingualModels,
 )
+
 
 @dataclass
 class AppDirectories:
@@ -76,11 +78,4 @@ class GlobalConfig:
     )
 
 
-@dataclass
-class DataInitializationStatus:
-    BaseFileNames = False
-    MediaData = False
-    AudioExtractionConfig = False
-    GlobalConfig = False
-    AppPathsToFiles = False
-    AppDirectories = False
+Event()

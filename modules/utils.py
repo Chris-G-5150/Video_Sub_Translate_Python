@@ -1,6 +1,6 @@
 from dataclasses import asdict
 from pathlib import Path
-from typing import TypeVar, Type, Any
+from typing import Any, Type, TypeVar
 
 T = TypeVar("T")
 
@@ -34,6 +34,3 @@ class Utils:
     def obj_to_dict(obj: Any) -> dict:
         """Turn a dataclass object into a dict."""
         return asdict(obj)
-
-    # @staticmethod
-    # def update_dataclass_fields(dataclass: Type[T], fields: dict):

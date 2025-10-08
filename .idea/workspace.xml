@@ -5,17 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d21d6966-2252-44be-a325-404f7cdb32c1" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/event_handler/events/data_initializer_events.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event_handler/events/file_manager_events.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event_handler/events/global_state_events.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/event_handler/events/media_manager_events.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/console_animations/animation_sequences/boot_sequence_animations.py" beforeDir="false" afterPath="$PROJECT_DIR$/console_animations/animation_sequences/boot_sequence_animations.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_handler/event_dispatchers.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_handler/event_dispatchers.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/event_handler/events_types.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_handler/events_types.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/console_animations/animation_containers.py" beforeDir="false" afterPath="$PROJECT_DIR$/console_animations/animation_containers.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_classes/global_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_classes/global_config.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_classes/speech_chunk.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_classes/speech_chunk.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_classes/state_steps.py" beforeDir="false" afterPath="$PROJECT_DIR$/data_classes/state_steps.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handlers_and_data/event_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/event_handlers_and_data/event_handler.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handlers_and_data/event_triggers_helper.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handlers_and_data/events/data_initializer_events.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handlers_and_data/events/file_manager_events.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handlers_and_data/events/global_state_events.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handlers_and_data/events/media_manager_events.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/event_handlers_and_data/events_types.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/modules/file_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/file_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_parameters/app_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_parameters/app_params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/module_parameters/whisper_local_params.py" beforeDir="false" afterPath="$PROJECT_DIR$/module_parameters/whisper_local_params.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/data_initializer.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/data_initializer.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/modules/global_state_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/global_state_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/json_utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/json_utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/media_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/media_manager.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/separate_and_remove_audio_silence.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/separate_and_remove_audio_silence.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/separate_audio_from_video.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/separate_audio_from_video.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/modules/whisper_local.py" beforeDir="false" afterPath="$PROJECT_DIR$/modules/whisper_local.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

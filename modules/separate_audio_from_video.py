@@ -1,4 +1,5 @@
 from audio_extract import extract_audio
+
 from data_classes.global_config import GlobalConfig
 from data_enums.compatible_audio_formats import CompatibleAudioFormats
 from data_enums.compatible_video_formats import CompatibleVideoFormats

@@ -1,8 +1,9 @@
 from pydub import AudioSegment, silence
+
 from data_classes.global_config import GlobalConfig
 from data_classes.speech_chunk import SpeechChunk
-from data_enums.iso_3166_regions import ISO3166Regions
 from data_enums.iso_639_languages import ISO639Language
+from data_enums.iso_3166_regions import ISO3166Regions
 from helper_functions.data.enum_evaluator import evaluate_enum
 
 
@@ -12,12 +13,8 @@ class SeparateAndRemoveAudioSilience:
         self.media_data = global_config.media_data
         self.directories = global_config.app_directories
         self.paths = global_config.app_paths_to_files
-        self.user_silence_offset = (
-            global_config.audio_extraction_config.user_silence_offset
-        )
-        self.user_silence_duration = (
-            global_config.audio_extraction_config.user_silence_duration,
-        )
+        self.user_silence_offset = global_config.audio_extraction_config.user_silence_offset
+        self.user_silence_duration = (global_config.audio_extraction_config.user_silence_duration,)
         self.source_language = (
             evaluate_enum(global_config.media_data.source_language, ISO639Language),
         )

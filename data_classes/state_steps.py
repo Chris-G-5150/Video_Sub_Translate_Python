@@ -1,6 +1,7 @@
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List
+
 from data_classes.speech_chunk import SpeechChunk
 
 

@@ -1,9 +1,11 @@
+import warnings
 from typing import List
+
 import GPUtil
+import torch
 from faster_whisper import WhisperModel
 from tqdm import tqdm
-import warnings
-import torch
+
 from data_classes.global_config import GlobalConfig
 from data_classes.speech_chunk import SpeechChunk
 
@@ -14,18 +16,17 @@ class WhisperLocal:
         global_config: GlobalConfig,
         speech_chunks: List[SpeechChunk],
     ):
+        self.global_config = global_config
         self.project_title = global_config.project_title
-        self.transcription_dir = (
-            global_config.app_directories.transcription_source_language_dir
-        )
+        self.transcription_dir = global_config.app_directories.transcription_source_language_dir  # type: ignore
         self.media_data = global_config.media_data
         self.speech_chunks = speech_chunks
         self.chosen_whisper_model = global_config.whisper_local_chosen_model
-        self.video_card_details = GPUtil.getGPUs()
+        self.video_card_details = GPUtil.getGPUs()  # pyright: ignore[reportUnknownMemberType]
 
     def gpu_is_compatible(self) -> bool:
-        gpu = self.video_card_details
-        gpu_is_compatible = bool(gpu and gpu[0].memoryTotal >= 1500)
+        gpu = self.video_card_details  # type: ignore
+        gpu_is_compatible = bool(gpu and gpu[0].memoryTotal >= 1500)  # type: ignore
         print("GPU is compatible")
         return gpu_is_compatible
 
@@ -47,13 +48,15 @@ class WhisperLocal:
 
         # Load faster-whisper model
         model = WhisperModel(
-            whisper_local.chosen_whisper_model, device=device, compute_type=compute_type
+            whisper_local.chosen_whisper_model,
+            device=device,
+            compute_type=compute_type,  # type: ignore
         )
         chunks = whisper_local.speech_chunks
 
         for i, chunk in enumerate(tqdm(chunks, desc="Transcribing")):
             try:
-                language = whisper_local.media_data.source_language
+                language = whisper_local.media_data.source_language  # type: ignore
                 if language or language != "en":
                     segments, info = model.transcribe(
                         str(chunk.speech_chunk_path), language=language
@@ -78,9 +81,7 @@ class WhisperLocal:
                 torch.cuda.empty_cache()  # clear GPU memory just in case
 
             except Exception as e:
-                warnings.warn(
-                    f"Unexpected error on chunk {i} ({chunk.speech_chunk_path}): {e}"
-                )
+                warnings.warn(f"Unexpected error on chunk {i} ({chunk.speech_chunk_path}): {e}")
                 chunk.transcribed_audio_text = "[ERROR: failed to transcribe]"
 
             finally:

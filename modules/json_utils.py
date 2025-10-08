@@ -1,5 +1,6 @@
 import json
 from pathlib import Path
+
 from data_classes.global_config import GlobalConfig
 from data_classes.speech_chunk import SpeechChunk
 from data_classes.state_steps import StateStep
@@ -22,9 +23,7 @@ class JsonUtils:
 
     def dict_to_speech_step(self, path: str | Path) -> StateStep:
         state_step_dict = self.from_json_to_dict(path)
-        chunks = [
-            SpeechChunk(**chunk) for chunk in state_step_dict.get("speech_chunks", [])
-        ]
+        chunks = [SpeechChunk(**chunk) for chunk in state_step_dict.get("speech_chunks", [])]
         return StateStep(
             step=state_step_dict["step"],
             description=state_step_dict["description"],

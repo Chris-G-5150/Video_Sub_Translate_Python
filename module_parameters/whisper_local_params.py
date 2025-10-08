@@ -1,5 +1,6 @@
 from dataclasses import dataclass
 from typing import Optional
+
 from data_enums.whisper_local_models import (
     WhisperEnglishModels,
     WhisperMultiLingualModels,
