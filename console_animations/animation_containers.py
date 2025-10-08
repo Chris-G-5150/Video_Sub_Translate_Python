@@ -4,4 +4,4 @@ from typing import Callable, Optional
 
 @dataclass
 class BootSequences:
-    app_init: Optional[Callable] | None = None
+	app_init: Optional[Callable] | None = None

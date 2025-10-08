@@ -1,6 +1,3 @@
-
-
-
 # class EventDispatchers:
 #     app_dispatcher = EventHandler()
 #     global_state_dispatcher = EventHandler()

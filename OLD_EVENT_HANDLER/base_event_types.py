@@ -3,11 +3,11 @@ from enum import Enum
 
 
 class EventStatus(Enum):
-    OK = "OK"
-    ERROR = "ERROR"
+	OK = "OK"
+	ERROR = "ERROR"
 
 
 @dataclass
 class StatusData:
-    status: str | EventStatus
-    status_message: str = ""
+	status: str | EventStatus
+	status_message: str = ""

@@ -9,7 +9,7 @@ from modules.console_animator import ConsoleAnimator
 from modules.data_initializer import DataInitializer
 from modules.utils import Utils
 
-GlobalConfig
+State
 
 
 class GlobalStateManager:
