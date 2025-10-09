@@ -26,12 +26,14 @@ class StateStepsReference(Enum):
 	SpeechChunksTranslationCompleted = "speech_chunks_translation_completed"
 	SpeechChunksTranslatedSubtitle = "speech_chunks_translated_subtitle"
 	AllOperationsCompleted = "all_operations_completed"
-	
+
 
 class StateSteps:
 	def __init__(self):
 		self.state_steps = {
-			"start": StateStep(step=0, description="start", speech_chunks_file_path=None, speech_chunks=None),
+			"start": StateStep(
+				step=0, description="start", speech_chunks_file_path=None, speech_chunks=None
+			),
 			"audio_extracted": StateStep(
 				step=1,
 				description="audio_extracted",
@@ -75,9 +77,9 @@ class StateSteps:
 				speech_chunks=None,
 			),
 		}
-	
+
 		self.current_state_step = None
-	
+
 	def get_state_step(self, name_of_state):
 		state_ref = evaluate_enum(name_of_state, StateStepsReference)
 		return getattr(self.state_steps, state_ref)
@@ -88,18 +90,11 @@ class StateSteps:
 
 	def update_current_state_step(self, name_of_state, properties_to_update: dict):
 		state_ref = evaluate_enum(name_of_state, StateStepsReference)
-		
+
 		target = getattr(self.current_state_step, state_ref, None)
 		if not target:
 			return  # or raise an error if missing
 
 		for change, new_value in properties_to_update.items():
-        
 			if target.get(change) is None:
 				target[change] = new_value
-					
-
-
-
-
-

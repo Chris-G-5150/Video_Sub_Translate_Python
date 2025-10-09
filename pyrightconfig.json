@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json.schemastore.org/pyrightconfig.json",
+  "include": [
+    "core",
+    "event_handlers_and_data",
+    "audio_processing",
+    "automation",
+    "tests"
+  ],
+  "exclude": [
+    "**/__pycache__",
+    "**/build",
+    "**/dist",
+    ".venv",
+    "venv"
+  ],
+  "venvPath": ".",
+  "venv": ".venv",
+
+  "typeCheckingMode": "standard",
+  "reportMissingImports": true,
+  "reportMissingTypeStubs": false,
+  "reportPrivateUsage": "none",
+  "reportUnusedImport": "information",
+  "reportUnusedVariable": "information",
+  "reportOptionalMemberAccess": "warning",
+  "reportOptionalSubscript": "warning",
+  "reportOptionalCall": "warning",
+  "reportOptionalIterable": "warning",
+
+  "pythonVersion": "3.10",
+  "executionEnvironments": [
+    {
+      "root": "./",
+      "extraPaths": ["."]
+    }
+  ]
+}

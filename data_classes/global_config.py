@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from pathlib import Path
-from typing import Optional
 
 from data_classes.state_steps import StateSteps
 from data_enums.compatible_audio_formats import CompatibleAudioFormats
@@ -29,9 +28,9 @@ class AppDirectories:
 @dataclass
 class AppPathsToFiles:
 	video_file_path: Path
-	audio_from_video_path: Optional[Path] | None
-	transcription_source_language_paths: Optional[list[Path]] | None
-	transcription_translated_language_dir: Optional[list[Path]] | None
+	audio_from_video_path: Path | None | None
+	transcription_source_language_paths: list[Path] | None | None
+	transcription_translated_language_dir: list[Path] | None | None
 
 
 @dataclass
@@ -47,8 +46,8 @@ class MediaData:
 	source_video_format: str | CompatibleVideoFormats
 	target_language: str | ISO639Language
 	source_video_file_name: str
-	source_language: Optional[str | ISO639Language]
-	source_language_dialect: Optional[str | ISO3166Regions]
+	source_language: str | ISO639Language | None
+	source_language_dialect: str | ISO3166Regions | None
 
 
 @dataclass
@@ -67,15 +66,12 @@ class BaseFileNames:
 @dataclass
 class GlobalConfig:
 	project_title: str
-	media_data: Optional[MediaData]
-	audio_extraction_config: Optional[AudioExtractionConfig]
-	app_directories: Optional[AppDirectories]
-	base_file_names: Optional[BaseFileNames]
-	app_paths_to_files: Optional[AppPathsToFiles]
+	media_data: MediaData | None
+	audio_extraction_config: AudioExtractionConfig | None
+	app_directories: AppDirectories | None
+	base_file_names: BaseFileNames | None
+	app_paths_to_files: AppPathsToFiles | None
 	state_steps: StateSteps
 	whisper_local_chosen_model: (
-		Optional[str | WhisperMultiLingualModels] | Optional[str | WhisperEnglishModels]
+		str | WhisperMultiLingualModels | None | str | WhisperEnglishModels | None
 	)
-
-
-Event()

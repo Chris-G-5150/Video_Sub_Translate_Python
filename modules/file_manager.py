@@ -1,20 +1,14 @@
 import os
 from dataclasses import asdict
 from pathlib import Path
-from typing import List
-
-from event_handlers_and_data.event_dispatchers import EventDispatchers
-from pydub import AudioSegment
 
 from data_classes.global_config import GlobalConfig
 from data_classes.speech_chunk import SpeechChunk
 from data_classes.state_steps import StateStep
-from modules.utils import Utils
 
 
 class FileManager:
-	def __init__(self, global_config: GlobalConfig, utils: Utils) -> None:
-		self.file
+	def __init__(self, directories: , utils: Utils) -> None:
 		self.global_config = global_config
 		self.utils = utils
 		self.directories = global_config.app_directories
@@ -44,36 +38,9 @@ class FileManager:
 			if self.check_directroy_exists(directory):
 				print(f"{directory} built and ready")
 
-	def get_transcription_file_path(
-		self, index_of_transcription
-	):  # could rework this to be universal but could get messy
-		file_names = self.file_names
-		# TODO - Check for a manager that takes care of updating the global config otherwise all objects are aiming to be frozen for safety
-		transcription_file_name = Path(
-			f"{index_of_transcription}{file_names.transcription_source_language_file_name}"
-		).with_suffix("txt")
-
-		return transcription_file_name
-
 		# TODO - Get the thing to join
 
-	@staticmethod
-	def write_speech_chunk_to_disk(
-		segment: AudioSegment, chunk: SpeechChunk, chunk_file_path: Path
-	):
-		segment.export(chunk_file_path, format=chunk.audio_format)
-		chunk.speech_chunk_path = chunk_file_path
-		print(f"Written speech chunk:{chunk_file_path}")
-
-	@staticmethod
-	def write_file_to_disk(content, file_path: Path):
-		# This safely writes the file and flushes the buffer, avoids any issues with data hanging around that shouldn't.
-		with open(file_path, "wb") as file:
-			file.write(content)
-			file.flush()
-			os.fsync(file.fileno())
-
-	def write_state_json_to_disk(self, state_step: StateStep, speech_chunks: List[SpeechChunk]):
+	def write_state_json_to_disk(self, state_step: StateStep, speech_chunks: list[SpeechChunk]):
 		file_manager = self
 		speech_chunk_json_file_name = file_manager.utils.get_speech_chunk_json_file_name(state_step)
 

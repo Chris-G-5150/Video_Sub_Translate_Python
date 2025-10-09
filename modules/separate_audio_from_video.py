@@ -1,27 +1,23 @@
 from audio_extract import extract_audio
 
-from data_classes.global_config import GlobalConfig
 from data_enums.compatible_audio_formats import CompatibleAudioFormats
 from data_enums.compatible_video_formats import CompatibleVideoFormats
-from modules.utils import Utils
 
 
 class SeparateAudioFromVideo:
-	def __init__(self, global_config: GlobalConfig, utils: Utils):
+	def __init__(self, global_config: GlobalConfig):
 		self.project_title = global_config.project_title
 		self.directories = global_config.app_directories
 		self.media_data = global_config.media_data
 		self.audio_config = global_config.audio_extraction_config
 		self.file_paths = global_config.app_paths_to_files
 		self.audio_output_path = None
-		self.utils = utils
 
-	def process_video_to_audio(self) -> str:
+	def process_video_to_audio(self):
 		media_data = self.media_data
 		directories = self.directories
 		file_paths = self.file_paths
 		audio_config = self.audio_config
-		utils = self.utils
 		audio_format_is_valid = CompatibleAudioFormats.has_value(media_data.extracted_audio_format)
 		video_format_is_valid = CompatibleVideoFormats.has_value(media_data.source_video_format)
 		both_formats_valid = audio_format_is_valid and video_format_is_valid
