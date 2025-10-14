@@ -27,7 +27,7 @@ class SafeDict:
 			raise RuntimeError(f"Cannot modify '{key}' — dictionary is frozen.")
 		self._data[key] = value
 
-	# freezes the class back after actions have been performed on ir
+	# freezes the class back after actions have been performed on it
 	def freeze(self):
 		self._frozen = True
 

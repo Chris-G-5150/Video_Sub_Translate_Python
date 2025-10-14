@@ -1,8 +1,7 @@
 from pathlib import Path
 
-from data_classes.state_steps import StateSteps, StateStepsReference
-from module_parameters.app_params import AppParams
-from modules.console_animator import ConsoleAnimator
+from data_types_and_classes.data_constants import StateSteps, StateStepsReference
+from data_types_and_classes.data_types import AppParams
 
 
 class GlobalStateManager:
@@ -10,22 +9,40 @@ class GlobalStateManager:
 		self,
 		app_base_dir: Path,
 		app_params: AppParams,
-		console_animator: ConsoleAnimator | None = None,
-		global_config: GlobalConfig | None = None,
 	):
-		self.app_base_dir = app_base_dir
-		self.app_params = app_params
-		self.console_animator = console_animator
-		self.state_container = StateSteps()
-		self.data_initializer = None
-		self.global_config = global_config
-		self.automation_manager = AutomationManager
+		self.app_base_dir = (app_base_dir,)
+		self.app_params = (app_params,)
+		self.state_steps = StateSteps
+		self.global_config = None
+		self.current_state_step = None
 
-	def init(self):
-		self.state_container.set_current_state_step(StateStepsReference.Start)
+		self.current_state_step = None
+
+	def get_current_state_step(self, name_of_state):
+		return getattr(self.state_steps, state_ref)
+
+	def set_current_state_step(self, name_of_state):
+		state_ref = StateStepsReference[name_of_state]
+		self.current_state_step = getattr(self.state_steps, state_ref)
+
+	def update_current_state_step(self, name_of_state, properties_to_update: dict):
+		state_ref = StateStepsReference[name_of_state]
+
+		target = getattr(self.current_state_step, state_ref, None)
+		if not target:
+			return  # or raise an error if missing
+
+		for change, new_value in properties_to_update.items():
+			if target.get(change) is None:
+				target[change] = new_value
+
+	def init(
+		self,
+	):
+		self.current_state_ref = StateStepsReference.Start
 		self.build_application_dependencies()
 
-	def set_current_state_step(self, state_step: StateStepsReference):
+	def set_current_state_step(self, state_step: str):
 		self.state_container.set_current_state_step = getattr(
 			self.state_container.state_steps, state_step
 		)
@@ -37,6 +54,4 @@ class GlobalStateManager:
 		self.data_initializer = DataInitializer(
 			app_params=self.app_params,
 			app_base_dir=self.app_base_dir,
-			utils=self.utils,
-			console_animator=self.console_animator,
 		)

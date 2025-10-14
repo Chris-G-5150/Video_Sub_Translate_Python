@@ -1,7 +1,4 @@
-from audio_extract import extract_audio
-
-from data_enums.compatible_audio_formats import CompatibleAudioFormats
-from data_enums.compatible_video_formats import CompatibleVideoFormats
+from data_types_and_classes.data_constants import CompatibleAudioFormats, CompatibleVideoFormats
 
 
 class SeparateAudioFromVideo:
@@ -18,7 +15,9 @@ class SeparateAudioFromVideo:
 		directories = self.directories
 		file_paths = self.file_paths
 		audio_config = self.audio_config
-		audio_format_is_valid = CompatibleAudioFormats.has_value(media_data.extracted_audio_format)
+		audio_format_is_valid = CompatibleAudioFormats
+
+		
 		video_format_is_valid = CompatibleVideoFormats.has_value(media_data.source_video_format)
 		both_formats_valid = audio_format_is_valid and video_format_is_valid
 

@@ -1,11 +1,10 @@
 {
-  "$schema": "https://json.schemastore.org/pyrightconfig.json",
   "include": [
     "core",
     "event_handlers_and_data",
     "audio_processing",
     "automation",
-    "tests"
+    ""
   ],
   "exclude": [
     "**/__pycache__",
@@ -28,7 +27,7 @@
   "reportOptionalCall": "warning",
   "reportOptionalIterable": "warning",
 
-  "pythonVersion": "3.10",
+  "pythonVersion": "3.13",
   "executionEnvironments": [
     {
       "root": "./",
