@@ -1,0 +1,1 @@
+python -m modules.sequential_events_processor.tests.sev_tests.test_sequential_events_processor
