@@ -1,6 +1,7 @@
 import sys
 from pathlib import Path
 
+from data_types_and_classes.data_types import AppParams
 from data_types_and_classes.iso_639_languages import ISO639Language
 from data_types_and_classes.iso_3166_regions import ISO3166Regions
 from modules.console_animator import ConsoleAnimator

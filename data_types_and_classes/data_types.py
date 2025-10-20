@@ -1,42 +1,9 @@
 from dataclasses import dataclass
 from pathlib import Path
-from typing import TypedDict
+from typing import Any, TypedDict
 
 from data_types_and_classes.iso_639_languages import ISO639Language
 from data_types_and_classes.iso_3166_regions import ISO3166Regions
-
-
-@dataclass
-class SpeechChunk:
-	def __init__(
-		self,
-		project_title: str,
-		clip_srt_index: int,
-		speech_chunk_path: Path,
-		milisecond_start: int,
-		milisecond_end: int,
-		duration_in_miliseconds: int,
-		audio_format: str,
-		source_language: str,
-		transcription_file_path: Path | None = None,
-		transcription_source_language_path: Path | None = None,
-		transcription_target_language_path: Path | None = None,
-		transcription_source_language_text: str | None = None,
-		transcription_target_language_text: str | None = None,
-	):
-		self.project_title = project_title
-		self.clip_srt_index = clip_srt_index
-		self.speech_chunk_path = speech_chunk_path
-		self.milisecond_start = milisecond_start
-		self.milisecond_end = milisecond_end
-		self.duration_in_miliseconds = duration_in_miliseconds
-		self.audio_format = audio_format
-		self.source_language = source_language
-		self.transcription_file_path = transcription_file_path
-		self.transcription_source_language_path = transcription_source_language_path
-		self.transcription_target_language_path = transcription_target_language_path
-		self.transcription_source_language_text = transcription_source_language_text
-		self.transcription_target_language_text = transcription_target_language_text
 
 
 class AppParams(TypedDict):
@@ -63,33 +30,25 @@ class StateStep:
 	state_written_to_disk: bool = False
 
 
-# def build_speech_chunk_dict(
-# 	project_title: str,
-# 	clip_srt_index: int,
-# 	speech_chunk_path: Path,
-# 	milisecond_start: int,
-# 	milisecond_end: int,
-# 	duration_in_miliseconds: int,
-# 	audio_format: str,
-# 	source_language: str,
-# 	transcription_file_path: Path | None,
-# 	transcription_source_language_path: Path | None,
-# 	transcription_target_language_path: Path | None,
-# 	transcription_source_language_text: str | None,
-# 	transcription_target_language_text: str | None,
-# ):
-# 	return {
-# 		project_title,
-# 		clip_srt_index,
-# 		speech_chunk_path,
-# 		milisecond_start,
-# 		milisecond_end,
-# 		duration_in_miliseconds,
-# 		audio_format,
-# 		source_language,
-# 		transcription_file_path,
-# 		transcription_source_language_path,
-# 		transcription_target_language_path,
-# 		transcription_source_language_text,
-# 		transcription_target_language_text,
-# 	}
+@dataclass
+class SpeechChunk:
+	project_title: str
+	clip_srt_index: int
+	speech_chunk_path: Path
+	millisecond_start: int
+	millisecond_end: int
+	duration_in_milliseconds: int
+	audio_format: str
+	source_language: str
+	transcription_file_path: Path | None
+	transcription_source_language_path: Path | None
+	transcription_target_language_path: Path | None
+	transcription_source_language_text: str | None
+	transcription_target_language_text: str | None
+
+
+@dataclass
+class Injectable(TypedDict):
+	name: str
+	category: str
+	payload: Any

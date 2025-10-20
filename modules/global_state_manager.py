@@ -18,12 +18,8 @@ class GlobalStateManager:
 
 		self.current_state_step = None
 
-	def get_current_state_step(self, name_of_state):
-		return getattr(self.state_steps, state_ref)
-
-	def set_current_state_step(self, name_of_state):
-		state_ref = StateStepsReference[name_of_state]
-		self.current_state_step = getattr(self.state_steps, state_ref)
+	def get_current_state_step(self):
+		return getattr(self.state_steps, str(self.current_state_step))
 
 	def update_current_state_step(self, name_of_state, properties_to_update: dict):
 		state_ref = StateStepsReference[name_of_state]
@@ -39,13 +35,12 @@ class GlobalStateManager:
 	def init(
 		self,
 	):
-		self.current_state_ref = StateStepsReference.Start
+		self.set_current_state_step(str(StateStepsReference.Start))
 		self.build_application_dependencies()
 
 	def set_current_state_step(self, state_step: str):
-		self.state_container.set_current_state_step = getattr(
-			self.state_container.state_steps, state_step
-		)
+		if self.state_steps[state_step]:
+			self.current_state_step = state_step
 
 	def get_current_app_state_step(self):
 		return self.state_container.current_state_step
